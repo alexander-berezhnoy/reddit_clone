@@ -19,12 +19,12 @@ import {
   VscAccount,
 } from "react-icons/all";
 import { auth } from "@/src/firebase/clientApp";
-import { signOut } from "firebase/auth";
+import { signOut, User } from "firebase/auth";
 import { useSetRecoilState } from "recoil";
 import { authModalState } from "@/src/atoms/authModalAtom";
 
 type UserMenuProps = {
-  user: any;
+  user?: User | null;
 };
 const UserMenu: React.FC<UserMenuProps> = ({ user }) => {
   const setAuthModalState = useSetRecoilState(authModalState);
