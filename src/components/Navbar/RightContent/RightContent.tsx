@@ -4,9 +4,11 @@ import AuthButtons from "@/src/components/Navbar/RightContent/AuthButtons";
 import AuthModal from "@/src/components/Modal/Auth/AuthModal";
 import { useSignOut } from "react-firebase-hooks/auth";
 import { auth } from "@/src/firebase/clientApp";
+import Icons from "@/src/components/Navbar/RightContent/Icons";
+import UserMenu from "@/src/components/Navbar/RightContent/UserMenu";
 
 type RightContentProps = {
-  user: any;
+  user?: any;
 };
 
 const RightContent: React.FC<RightContentProps> = ({ user }) => {
@@ -16,10 +18,13 @@ const RightContent: React.FC<RightContentProps> = ({ user }) => {
       <AuthModal />
       <Flex justify="center" align="center">
         {user ? (
-          <Button onClick={() => signOut()}>Logout</Button>
+          <>
+            <Icons />
+          </>
         ) : (
           <AuthButtons />
         )}
+        <UserMenu user={user} />
       </Flex>
     </>
   );
