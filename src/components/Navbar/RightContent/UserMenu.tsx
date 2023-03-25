@@ -11,13 +11,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-import {
-  CgProfile,
-  FaRedditSquare,
-  IoSparkles,
-  MdOutlineLogin,
-  VscAccount,
-} from "react-icons/all";
+import { CgProfile } from "react-icons/cg";
+import { FaRedditSquare } from "react-icons/fa";
+import { IoSparkles } from "react-icons/io5";
+import { MdOutlineLogin } from "react-icons/md";
+import { VscAccount } from "react-icons/vsc";
 import { auth } from "@/src/firebase/clientApp";
 import { signOut, User } from "firebase/auth";
 import { useSetRecoilState } from "recoil";
